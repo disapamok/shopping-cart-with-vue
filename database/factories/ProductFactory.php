@@ -14,8 +14,8 @@ $factory->define(Product::class, function (Faker $faker) {
         'category_id' => Category::inRandomOrder()->value('id'),
         'name' => $faker->word(),
         'price' => $faker->randomFloat(2, 100, 1000),
-        'description' => $faker->randomHtml(),
-        'image' => $faker->imageUrl(640, 480, 'electorics', true),
+        'description' => $faker->text(500),
+        'image' => $faker->imageUrl(640, 480, 'electronic', true),
         'added_by' => User::whereIn('role_id', [Roles::ADMIN, Roles::SALES_MANAGER])->inRandomOrder()->value('id'),
     ];
 });

@@ -13,7 +13,7 @@
                 <div class="product-thumbnail">
                     <img :src="product.image" class="img-responsive" />
                     <h4>Name: {{product.name}}</h4>
-                    <p>Lorem ipsum dolar sit amet...</p>
+                    <p>This product is available in the stock.</p>
                     <h3>Price: <span class="pull-right">Rs. {{product.price}}</span></h3>
                     <div class="product-actions">
                         <button class="btn btn-sm btn-primary" v-on:click="addToCart(product)">Add To Cart</button>
