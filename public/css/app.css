@@ -1,5 +1,24 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
 
+.product-list .product-thumbnail {
+  margin-bottom: 15px;
+}
+
+.product-list .product-thumbnail img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.product-list .product-thumbnail .product-actions button,
+.product-list .product-thumbnail .product-actions a {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.product-list .product-thumbnail .pull-right {
+  float: right;
+}
+
 /*!
  * Bootstrap v4.6.2 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors

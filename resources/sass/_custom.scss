@@ -1,0 +1,19 @@
+.product-list{
+    .product-thumbnail{
+        margin-bottom: 15px;
+
+        img{
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .product-actions{
+            button,a{
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+        .pull-right{
+            float: right;
+        }
+    }
+}

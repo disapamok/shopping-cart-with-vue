@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Customer\FrontController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,8 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [HomeController::class, 'index'])->middleware('guest');
+Route::group(['middleware' => 'auth', 'as' => 'front.'], function () {
+    Route::get('/', [FrontController::class, 'listProducts'])->name('list');
 });
 
 Auth::routes();
