@@ -23,7 +23,7 @@ class CreateProductsTable extends Migration
             $table->string('image', 500);
             $table->unsignedBigInteger('added_by');
             $table->foreign('added_by')->references('id')->on('users');
-            $table->unsignedBigInteger('updated_by');
+            $table->unsignedBigInteger('updated_by')->nullable();
             $table->foreign('updated_by')->references('id')->on('users');
             $table->timestamps();
         });
