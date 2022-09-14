@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\Roles;
+use App\User;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
 
@@ -25,6 +27,11 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        Gate::define('touch_product', function (User $user) {
+            return in_array($user->role_id, [Roles::ADMIN, Roles::OPERATION_MANAGER]);
+        });
+        Gate::define('view_daily_sales', function (User $user) {
+            return $user->role_id == Roles::OPERATION_MANAGER;
+        });
     }
 }
