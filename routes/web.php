@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index'])->middleware('guest');
 Route::group(['middleware' => 'auth', 'as' => 'front.'], function () {
     Route::get('/', [FrontController::class, 'listProducts'])->name('list');
+    Route::post('add-to-cart', [FrontController::class, 'addToCart'])->name('add-to-cart');
 });
 
 Auth::routes();

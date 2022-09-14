@@ -35,12 +35,15 @@
         props : [
             'categories'
         ],
-        mounted(){
-            console.log(this.categories);
-        },
         methods:{
             addToCart : function (product){
-
+                axios.post('/add-to-cart',{
+                    product_id : product.id
+                }).then((response) => {
+                    alert(response);
+                }).catch(() => {
+                    alert('error');
+                });
             }
         }
     }
