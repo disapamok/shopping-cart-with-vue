@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Roles extends Model
 {
+    public $timestamps = false;
+
     const ADMIN = 1;
     const SALES_MANAGER = 2;
     const OPERATION_MANAGER = 3;
