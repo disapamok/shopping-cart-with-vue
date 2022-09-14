@@ -21,7 +21,17 @@ class FrontController extends BaseAPIController
     public function addToCart(Request $request)
     {
         $cart = Cart::firstOrCreate(['user_id' => auth()->id()]);
-        $cart->items()->save(new CartItems(['product_id' => $request->product_id]));
+
+        // Check if the cart item is already exists.
+        $prodItem = CartItems::where('cart_id', $cart->id)->where('product_id', $request->product_id)->first();
+
+        if ($prodItem == null) {
+            $cart->items()->save(new CartItems(['product_id' => $request->product_id]));
+        } else {
+            $prodItem->qty = ($prodItem->qty + 1);
+            $prodItem->update();
+        }
+
         return $this->success([], 'The product has been added to the cart.');
     }
 }
