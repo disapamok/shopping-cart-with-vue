@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers\Customer;
 
+use App\Http\Controllers\BaseAPIController;
 use App\Http\Controllers\Controller;
 use App\Models\Cart;
+use App\Models\CartItems;
 use Illuminate\Http\Request;
 
-class CartController extends Controller
+class CartController extends BaseAPIController
 {
     public function index()
     {
@@ -14,5 +16,11 @@ class CartController extends Controller
         return view('front.cart')->with([
             'cart' => $cart
         ]);
+    }
+
+    public function remove($cartItem, Request $request)
+    {
+        $cart = Cart::where('user_id', auth()->id())->first()->items()->find($cartItem)->delete();
+        return $this->success([], 'The item has been removed from the cart.');
     }
 }

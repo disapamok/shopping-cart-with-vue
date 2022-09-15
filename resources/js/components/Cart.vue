@@ -14,7 +14,7 @@
                         <p>{{item.product.category.name}}</p>
                     </div>
                     <input type="number" :value="item.qty"/>
-                    <button class="btn btn-sm btn-danger">Remove</button>
+                    <button class="btn btn-sm btn-danger" v-on:click="remove(item)">Remove</button>
                 </div>
             </div>
         </div>
@@ -33,6 +33,15 @@ export default{
     ],
     mounted(){
         console.log(this.cart);
+    },
+    methods: {
+        remove : function(item){
+            axios.delete('/cart/remove-item/'+item.id).then((response) => {
+                console.log(response.data);
+            }).catch((error) => {
+                alert('error');
+            });
+        }
     }
 }
 </script>

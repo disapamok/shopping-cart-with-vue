@@ -25,6 +25,7 @@ Route::group(['middleware' => 'auth', 'as' => 'front.'], function () {
 
 Route::group(['middleware' => 'auth', 'as' => 'cart.', 'prefix' => 'cart'], function () {
     Route::get('/', [CartController::class, 'index'])->name('index');
+    Route::delete('/remove-item/{CartItem}', [CartController::class, 'remove'])->name('remove');
 });
 
 Auth::routes();
