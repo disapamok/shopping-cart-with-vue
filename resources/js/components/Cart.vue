@@ -21,6 +21,7 @@
             <div class="col-lg-12" v-if="cartItems.length == 0">
                 <div class="alert alert-warning text-center">Your cart is empty. Add items from the product page.</div>
             </div>
+            <a href="/" class="btn btn-sm btn-primary center">Back to products</a>
         </div>
     </div>
 </template>

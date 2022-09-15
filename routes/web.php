@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Customer\CartController;
 use App\Http\Controllers\Customer\FrontController;
 use App\Http\Controllers\HomeController;
@@ -26,6 +27,10 @@ Route::group(['middleware' => 'auth', 'as' => 'front.'], function () {
 Route::group(['middleware' => 'auth', 'as' => 'cart.', 'prefix' => 'cart'], function () {
     Route::get('/', [CartController::class, 'index'])->name('index');
     Route::delete('/remove-item/{CartItem}', [CartController::class, 'remove'])->name('remove');
+});
+
+Route::group(['middleware' => 'admin', 'prefix' => 'products', 'namespace' => 'Admin', 'as' => 'admin.'], function () {
+    Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
 });
 
 Auth::routes();
