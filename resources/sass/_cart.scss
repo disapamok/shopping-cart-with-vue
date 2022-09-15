@@ -1,0 +1,23 @@
+.the-cart{
+    .cart-item{
+        padding: 10px;
+        border-radius: 5px;
+        .flexbox{
+            display: flex;
+            flex-wrap: wrap;
+            align-content: space-between;
+            justify-content: space-around;
+            align-items: center;
+
+            .prod-name{
+                flex-basis: 50%;
+                h4{ margin-bottom: 0px; }
+                p{ margin-bottom: 0px; }
+            }
+        }
+
+    }
+    .cart-item:hover{
+        background-color: #f0f3f5;
+    }
+}
