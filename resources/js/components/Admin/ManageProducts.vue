@@ -43,7 +43,7 @@
             </div>
         </div>
 
-        <addModal v-bind:categories="categories"/>
+        <addModal v-bind:categories="categories" v-on:productAdded="pushProduct"/>
     </div>
 </template>
 <script>
@@ -74,8 +74,8 @@ export default({
         }
     },
     methods:{
-        pushProduct : function(){
-
+        pushProduct : function(prodData){
+            console.log(prodData);
         }
     }
 })
