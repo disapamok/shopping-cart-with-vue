@@ -1,14 +1,72 @@
 <template>
-
+    <div class="container admin-products">
+        <div class="row">
+            <div class="col-lg-12 heading">
+                <h4>Products</h4>
+                <p>These are the products that live on the website.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <button class="btn btn-primary">Add Product</button>
+            </div>
+            <div class="ml-auto mr-3 category-selector">
+                <div class="form-group">
+                    <select class="form-control" v-model="selectedCategory">
+                        <option v-for="category in categoriesList" :key="category.id" :value="category.id">{{category.name}}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <table class="table table-dashed">
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Description</th>
+                        <th>Image</th>
+                        <th class="text-right">Actions</th>
+                    </tr>
+                    <tr v-for="product in filteredProducts" :key="'P'+product.id">
+                        <td>{{product.name}}</td>
+                        <td>{{product.price}}</td>
+                        <td>{{product.short_description}}</td>
+                        <td><img :src="product.image" width="50"/></td>
+                        <td class="text-right">
+                            <button class="btn btn-sm btn-primary">Edit</button>
+                            <button class="btn btn-sm btn-danger">Edit</button>
+                        </td>
+                    </tr>
+                </table>
+                <p class="text-right">Showing {{filteredProducts.length}} result(s).</p>
+            </div>
+        </div>
+    </div>
 </template>
 <script>
 export default({
     data() {
-        products : []
+        return {
+            categoriesList : [],
+            productsList : [],
+            selectedCategory : null
+        }
     },
-    props : ['products'],
+    props : ['categories','products'],
     mounted(){
-        alert();
+        this.categoriesList = this.categories;
+        this.productsList = this.products;
+        this.selectedCategory = this.categories[0].id;
+    },
+    computed:{
+        filteredProducts : function (){
+            return this.products.filter(function (product){
+                return product.category_id === this.selectedCategory;
+            }.bind(this));
+        }
+    },
+    methods:{
     }
 })
 </script>

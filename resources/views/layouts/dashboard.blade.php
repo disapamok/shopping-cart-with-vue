@@ -95,7 +95,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-9">
+                    <div class="col-lg-9 admin-container">
                         @yield('content')
                     </div>
                 </div>

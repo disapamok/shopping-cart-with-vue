@@ -1,5 +1,5 @@
 @extends('layouts.dashboard')
 
 @section('content')
-    <admin-products></admin-products>
+    <admin-products v-bind:categories="{{ $categories }}" v-bind:products="{{ $product }}"></admin-products>
 @endsection

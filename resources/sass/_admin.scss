@@ -1,0 +1,17 @@
+.admin-container{
+    padding-top: 10px;
+
+    .heading{
+        margin-bottom: 15px;
+        h4{ margin-bottom: 0px; }
+        p{ margin-bottom: 0px; font-size: 12px; }
+    }
+
+    .admin-products{
+        .category-selector{
+            min-width: 300px;
+            label{ margin-bottom: 0px; }
+        }
+        table{ margin-bottom: 0px; }
+    }
+}
