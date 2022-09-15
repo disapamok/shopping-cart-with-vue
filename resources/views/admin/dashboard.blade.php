@@ -1,1 +1,4 @@
-Admin dashboard
+@extends('layouts.dashboard')
+
+@section('content')
+@endsection
