@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Customer\CartController;
 use App\Http\Controllers\Customer\FrontController;
 use App\Http\Controllers\HomeController;
@@ -31,6 +32,7 @@ Route::group(['middleware' => 'auth', 'as' => 'cart.', 'prefix' => 'cart'], func
 
 Route::group(['middleware' => 'admin', 'prefix' => 'products', 'namespace' => 'Admin', 'as' => 'admin.'], function () {
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
+    Route::resource('product', 'ProductController');
 });
 
 Auth::routes();

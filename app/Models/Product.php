@@ -11,6 +11,7 @@ class Product extends Model
     protected $hidden = [
         'updated_at', 'created_at', 'added_by', 'updated_by'
     ];
+    protected $fillable = ['name', 'category_id', 'price', 'description', 'image', 'added_by'];
 
     public function category()
     {
