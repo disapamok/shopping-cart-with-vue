@@ -8,26 +8,34 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
+import Vue from 'vue';
+import VueSweetalert2 from 'vue-sweetalert2';
+Vue.use(VueSweetalert2);
 
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
-
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+// Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('product-list',require('./components/ProductList.vue').default);
 Vue.component('cart-view',require('./components/Cart.vue').default);
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
+Vue.mixin({
+    methods : {
+        showAlert : function(message){
+            this.$swal(message);
+        },
+        ask : function(title, message, callback){
+            this.$swal({
+                title: (title == null ? "Are you sure?" : title),
+                text: message,
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Yes, do it!",
+                cancelButtonText: "No, cancel!",
+                closeOnConfirm: false,
+                closeOnCancel: false
+            }).then(callback);
+        }
+    }
+});
 
 const app = new Vue({
     el: '#app',

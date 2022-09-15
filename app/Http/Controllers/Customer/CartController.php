@@ -20,7 +20,7 @@ class CartController extends BaseAPIController
 
     public function remove($cartItem, Request $request)
     {
-        $cart = Cart::where('user_id', auth()->id())->first()->items()->find($cartItem)->delete();
+        Cart::where('user_id', auth()->id())->first()->items()->find($cartItem)->delete();
         return $this->success([], 'The item has been removed from the cart.');
     }
 }
