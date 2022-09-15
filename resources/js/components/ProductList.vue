@@ -1,8 +1,11 @@
 <template>
     <div class="container product-list">
         <div class="row">
-            <div class="col-lg-12">
-                <h3 class="text-center">Find your product and do "Add to cart" to purchase a lot once!</h3>
+            <div class="col-lg-10">
+                <h3 class="text-left">Find your product and do "Add to cart" to purchase a lot once!</h3>
+            </div>
+            <div class="col-lg-2">
+                <a href="/cart" class="btn btn-danger float-right">View Cart</a>
             </div>
         </div>
         <div class="row" v-for="category in categories" :key="category.id">
