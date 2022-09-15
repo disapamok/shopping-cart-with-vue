@@ -24,10 +24,13 @@ class RedirectIfAuthenticated
 
             $role = auth()->user()->role_id;
             switch ($role) {
-                case Roles::ADMIN || $role == Roles::OPERATION_MANAGER:
+                case Roles::ADMIN:
                     return redirect('/products/dashboard');
                     break;
-                case $role == Roles::ADMIN || $role == Roles::OPERATION_MANAGER:
+                case Roles::OPERATION_MANAGER:
+                    return redirect('/products/dashboard');
+                    break;
+                case Roles::OPERATION_MANAGER:
                     return redirect('/reports/dashboard');
                     break;
                 default:

@@ -82,7 +82,7 @@
                 <div class="row">
                     <div class="col-lg-3 sidebar">
                         <div class="greet">
-                            <h4>Hi {{ auth()->user()->name }}</h4>
+                            <h4>Hi, {{ auth()->user()->name }}</h4>
                             <p>Please use this navigation to manage the system.</p>
                         </div>
                         <div class="menu">

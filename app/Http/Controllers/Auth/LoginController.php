@@ -26,10 +26,13 @@ class LoginController extends Controller
     {
         $role = auth()->user()->role_id;
         switch ($role) {
-            case Roles::ADMIN || $role == Roles::OPERATION_MANAGER:
+            case Roles::ADMIN:
                 return '/products/dashboard';
                 break;
-            case $role == Roles::ADMIN || $role == Roles::OPERATION_MANAGER:
+            case Roles::OPERATION_MANAGER:
+                return '/products/dashboard';
+                break;
+            case Roles::OPERATION_MANAGER:
                 return '/reports/dashboard';
                 break;
             default:

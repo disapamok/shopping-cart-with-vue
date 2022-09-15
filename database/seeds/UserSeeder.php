@@ -36,7 +36,7 @@ class UserSeeder extends Seeder
         ]);
 
         User::create([
-            'role_id' => Roles::ADMIN,
+            'role_id' => Roles::CUSTOMER,
             'name' => 'ABC Customer',
             'email' => 'customer@abc.com',
             'password' => Hash::make('12345678')

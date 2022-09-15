@@ -12,9 +12,12 @@ import Vue from 'vue';
 import VueSweetalert2 from 'vue-sweetalert2';
 Vue.use(VueSweetalert2);
 
-// Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+// Customer view components
 Vue.component('product-list',require('./components/ProductList.vue').default);
 Vue.component('cart-view',require('./components/Cart.vue').default);
+
+// Admin View Components
+Vue.component('admin-products',require('./components/Admin/ManageProducts.vue').default);
 
 Vue.mixin({
     methods : {
