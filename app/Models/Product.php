@@ -4,9 +4,12 @@ namespace App\Models;
 
 use Str;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Product extends Model
 {
+    use SoftDeletes;
+
     protected $appends = ['short_description'];
     protected $hidden = [
         'updated_at', 'created_at', 'added_by', 'updated_by'

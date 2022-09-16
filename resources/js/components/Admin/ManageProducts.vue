@@ -35,7 +35,7 @@
                         <td><img :src="product.image" width="50"/></td>
                         <td class="text-right">
                             <button class="btn btn-sm btn-primary" v-on:click="editProduct(product)">Edit</button>
-                            <button class="btn btn-sm btn-danger">Delete</button>
+                            <button class="btn btn-sm btn-danger" v-on:click="deleteProduct(product)">Delete</button>
                         </td>
                     </tr>
                 </table>
@@ -86,6 +86,15 @@ export default({
         },
         updateProduct : function (prodData){
             console.log(prodData);
+        },
+        deleteProduct : function (product){
+            this.ask(null,"This product will be deleted!", function (action){
+                if(action.isConfirmed){
+                    axios.delete('/products/product/'+product.id).then((response) => {
+                        this.showAlert(response.data.message);
+                    }).catch((error) => {});
+                }
+            }.bind(this));
         }
     }
 })

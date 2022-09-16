@@ -104,6 +104,8 @@ class ProductController extends BaseAPIController
      */
     public function destroy($id)
     {
-        //
+        Gate::authorize('touch_product');
+        Product::find($id)->delete();
+        return $this->success([], 'The product has been deleted.');
     }
 }
