@@ -44,7 +44,7 @@
         </div>
 
         <addModal v-bind:categories="categories" v-on:productAdded="pushProduct"/>
-        <editModal v-bind:categories="categories" ref="editProductsElement"/>
+        <editModal v-bind:categories="categories" ref="editProductsElement" v-on:productUpdated="updateProduct"/>
     </div>
 </template>
 <script>
@@ -83,7 +83,9 @@ export default({
         },
         editProduct : function (product){
             this.$refs.editProductsElement.openModal(product);
-            //$('#editProduct').modal('show');
+        },
+        updateProduct : function (prodData){
+            console.log(prodData);
         }
     }
 })

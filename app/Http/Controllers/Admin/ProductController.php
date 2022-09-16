@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\BaseAPIController;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AddProduct;
+use App\Http\Requests\UpdateProductRequest;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
@@ -80,9 +81,19 @@ class ProductController extends BaseAPIController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateProductRequest $request, $id)
     {
-        //
+        Gate::authorize('touch_product');
+
+        $product = Product::find($id);
+        $product->name = $request->product_name;
+        $product->category_id = $request->product_category;
+        $product->image = $request->product_image;
+        $product->description = $request->product_description;
+        $product->updated_by = auth()->id();
+        $product->update();
+
+        return $this->success([], 'Product has been updated.');
     }
 
     /**
