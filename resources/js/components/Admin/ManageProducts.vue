@@ -34,7 +34,7 @@
                         <td>{{product.short_description}}</td>
                         <td><img :src="product.image" width="50"/></td>
                         <td class="text-right">
-                            <button class="btn btn-sm btn-primary">Edit</button>
+                            <button class="btn btn-sm btn-primary" v-on:click="editProduct(product)">Edit</button>
                             <button class="btn btn-sm btn-danger">Delete</button>
                         </td>
                     </tr>
@@ -44,20 +44,24 @@
         </div>
 
         <addModal v-bind:categories="categories" v-on:productAdded="pushProduct"/>
+        <editModal v-bind:categories="categories" ref="editProductsElement"/>
     </div>
 </template>
 <script>
 import addModal from './Modals/CreateProduct.vue';
+import editModal from './Modals/EditProduct.vue';
+
 export default({
     name: 'ManageProducts',
     components:{
-        'addModal' : addModal
+        'addModal' : addModal,
+        'editModal' : editModal
     },
     data() {
         return {
             categoriesList : [],
             productsList : [],
-            selectedCategory : null,
+            selectedCategory : null
         }
     },
     props : ['categories','products'],
@@ -76,6 +80,10 @@ export default({
     methods:{
         pushProduct : function(prodData){
             console.log(prodData);
+        },
+        editProduct : function (product){
+            this.$refs.editProductsElement.openModal(product);
+            //$('#editProduct').modal('show');
         }
     }
 })
