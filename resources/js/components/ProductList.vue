@@ -1,11 +1,11 @@
 <template>
     <div class="container product-list">
         <div class="row">
-            <div class="col-lg-10">
+            <div class="col-lg-9">
                 <h3 class="text-left">Find your product and do "Add to cart" to purchase a lot once!</h3>
             </div>
-            <div class="col-lg-2">
-                <a href="/cart" class="btn btn-danger float-right">View Cart</a>
+            <div class="col-lg-3">
+                <a href="/cart" class="btn btn-danger float-right">View Cart - ({{cartItems.length}} Items)</a>
             </div>
         </div>
         <div class="row" v-for="category in categories" :key="category.id">
@@ -20,7 +20,6 @@
                     <h3>Price: <span class="pull-right">Rs. {{product.price}}</span></h3>
                     <div class="product-actions">
                         <button class="btn btn-sm btn-primary" v-on:click="addToCart(product)">Add To Cart</button>
-                        <a class="btn btn-sm btn-warning" :href="'/product/'+category.name+'/'+product.id">View Item</a>
                     </div>
                 </div>
             </div>
@@ -32,22 +31,28 @@
     export default {
         data (){
             return {
-
+                cartItems : [],
             }
         },
         props : [
-            'categories'
+            'categories','cart'
         ],
         methods:{
             addToCart : function (product){
                 axios.post('/add-to-cart',{
                     product_id : product.id
                 }).then((response) => {
-                    alert(response);
+                    if(response.data.data.created){
+                        this.cartItems.push(product);
+                    }
+                    this.showAlert(response.data.message);
                 }).catch(() => {
-                    alert('error');
+                    this.showAlert('There was an error while adding item to the cart.');
                 });
             }
+        },
+        mounted(){
+            this.cartItems = this.cart.items;
         }
     }
 </script>

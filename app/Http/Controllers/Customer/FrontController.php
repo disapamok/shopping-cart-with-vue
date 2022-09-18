@@ -13,8 +13,11 @@ class FrontController extends BaseAPIController
     public function listProducts()
     {
         $categories = Category::with('products')->get();
+        $cart = Cart::where('user_id', auth()->id())->with('items')->first();
+
         return view('front.product-list')->with([
-            'categories' => $categories
+            'categories' => $categories,
+            'cart' => $cart
         ]);
     }
 
@@ -27,11 +30,15 @@ class FrontController extends BaseAPIController
 
         if ($prodItem == null) {
             $cart->items()->save(new CartItems(['product_id' => $request->product_id]));
+            return $this->success([
+                'created' => true
+            ], 'The product has been added to the cart.');
         } else {
             $prodItem->qty = ($prodItem->qty + 1);
             $prodItem->update();
+            return $this->success([
+                'created' => false
+            ], 'The product quantity has been updated.');
         }
-
-        return $this->success([], 'The product has been added to the cart.');
     }
 }
