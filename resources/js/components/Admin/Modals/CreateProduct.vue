@@ -73,7 +73,7 @@ export default {
             axios.post('/products/product',this.addProduct).then((response) => {
                 this.showAlert(response.data.message);
                 $('#addProduct').modal('hide');
-                this.$emit('productAdded',this.addProduct);
+                this.$emit('productAdded',response.data.data.theProduct);
             }).catch((error) => {
                 this.addProductErrors = {
                     name: null,category: null,price: null,imageURL: null,description: null

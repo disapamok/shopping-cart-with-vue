@@ -30,7 +30,7 @@
                     </tr>
                     <tr v-for="product in filteredProducts" :key="'P'+product.id">
                         <td>{{product.name}}</td>
-                        <td>{{product.price}}</td>
+                        <td>Rs. {{product.price.toFixed(2)}}</td>
                         <td>{{product.short_description}}</td>
                         <td><img :src="product.image" width="50"/></td>
                         <td class="text-right">
@@ -61,7 +61,8 @@ export default({
         return {
             categoriesList : [],
             productsList : [],
-            selectedCategory : null
+            selectedCategory : null,
+            filterReference : 0, // Reference to update the computed method.
         }
     },
     props : ['categories','products'],
@@ -72,27 +73,39 @@ export default({
     },
     computed:{
         filteredProducts : function (){
-            return this.products.filter(function (product){
+            this.filterReference;
+            return this.productsList.filter(function (product){
                 return product.category_id === this.selectedCategory;
             }.bind(this));
         }
     },
     methods:{
         pushProduct : function(prodData){
-            console.log(prodData);
+            this.productsList.push(prodData);
         },
         editProduct : function (product){
             this.$refs.editProductsElement.openModal(product);
         },
         updateProduct : function (prodData){
-            console.log(prodData);
+            var index;
+            this.productsList.filter(function (iProduct,i){
+                if(iProduct.id === prodData.id)
+                    index = i;
+            });
+            this.productsList[index] = prodData;
+            this.filterReference++; // Reference to update the computed method.
         },
         deleteProduct : function (product){
             this.ask(null,"This product will be deleted!", function (action){
                 if(action.isConfirmed){
                     axios.delete('/products/product/'+product.id).then((response) => {
                         this.showAlert(response.data.message);
-                    }).catch((error) => {});
+                        this.productsList = this.productsList.filter(function (iProduct){
+                            return iProduct.id !== product.id;
+                        });
+                    }).catch((error) => {
+                        this.showAlert('Error deleting the product.');
+                    });
                 }
             }.bind(this));
         }

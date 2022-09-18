@@ -76,7 +76,7 @@ export default {
             axios.put('/products/product/'+productId,this.editProduct).then((response) => {
                 this.showAlert(response.data.message);
                 $('#editProduct').modal('hide');
-                this.$emit('productUpdated',this.editProduct);
+                this.$emit('productUpdated',response.data.data.theProduct);
             }).catch((error) => {
                 this.editProductErrors = {
                     name: null,category: null,price: null,imageURL: null,description: null

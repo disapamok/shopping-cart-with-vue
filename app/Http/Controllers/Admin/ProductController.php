@@ -40,16 +40,21 @@ class ProductController extends BaseAPIController
     public function store(AddProduct $request)
     {
         Gate::authorize('touch_product');
-        Product::create([
-            'name' => $request->name,
-            'category_id' => $request->category,
-            'price' => $request->price,
-            'description' => $request->description,
-            'image' => $request->imageURL,
-            'added_by' => auth()->id()
-        ]);
 
-        return $this->success([], 'Product has been added.');
+        $product = new Product();
+        $product->name = $request->name;
+        $product->category_id = $request->category;
+        $product->price = $request->price;
+        $product->description = $request->description;
+        $product->image = $request->imageURL;
+        $product->added_by = auth()->id();
+        $product->save();
+
+        $productOb = Product::with('category')->find($product->id);
+
+        return $this->success([
+            'theProduct' => $productOb
+        ], 'Product has been added.');
     }
 
     /**
@@ -93,7 +98,11 @@ class ProductController extends BaseAPIController
         $product->updated_by = auth()->id();
         $product->update();
 
-        return $this->success([], 'Product has been updated.');
+        $productOb = Product::with('category')->find($product->id);
+
+        return $this->success([
+            'theProduct' => $productOb
+        ], 'Product has been updated.');
     }
 
     /**
