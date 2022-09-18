@@ -13,7 +13,7 @@
                         <h4>{{item.product.name}}</h4>
                         <p>{{item.product.category.name}}</p>
                     </div>
-                    <h6>Rs. {{item.product.price}}</h6>
+                    <h6>Rs. {{item.product.price.toFixed(2)}}</h6>
                     <input type="number" :value="item.qty" disabled/>
                     <button class="btn btn-sm btn-danger" v-on:click="remove(item)">Remove</button>
                 </div>
@@ -43,7 +43,6 @@ export default{
         remove : function(item){
             this.ask(null,"This item will be removed from the cart!", function (action){
                 if(action.isConfirmed){
-                    console.log(this.cartItems);
                     axios.delete('/cart/remove-item/'+item.id).then((response) => {
                         this.cartItems = this.cartItems.filter(function (ArItem){
                             return ArItem.id !== item.id;
