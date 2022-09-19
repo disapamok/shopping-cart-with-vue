@@ -22,12 +22,14 @@ Route::get('/', [HomeController::class, 'index'])->middleware('guest');
 
 Route::group(['middleware' => 'auth', 'as' => 'front.'], function () {
     Route::get('/', [FrontController::class, 'listProducts'])->name('list');
-    Route::post('add-to-cart', [FrontController::class, 'addToCart'])->name('add-to-cart');
 });
 
 Route::group(['middleware' => 'auth', 'as' => 'cart.', 'prefix' => 'cart'], function () {
     Route::get('/', [CartController::class, 'index'])->name('index');
+    Route::post('add-to-cart', [CartController::class, 'addToCart'])->name('add-to-cart');
     Route::delete('/remove-item/{CartItem}', [CartController::class, 'remove'])->name('remove');
+    Route::put('/do-checkout', [CartController::class, 'doCheckout'])->name('do-checkout');
+    Route::get('/order-history', [CartController::class, 'checkout'])->name('checkout');
 });
 
 Route::group(['middleware' => 'admin', 'prefix' => 'products', 'namespace' => 'Admin', 'as' => 'admin.'], function () {

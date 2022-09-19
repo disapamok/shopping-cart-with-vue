@@ -39,7 +39,7 @@
         ],
         methods:{
             addToCart : function (product){
-                axios.post('/add-to-cart',{
+                axios.post('/cart/add-to-cart',{
                     product_id : product.id
                 }).then((response) => {
                     if(response.data.data.created){
