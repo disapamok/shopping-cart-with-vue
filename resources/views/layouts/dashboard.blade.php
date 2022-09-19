@@ -92,6 +92,11 @@
                                         <a href="" class="active">Product Dashboard</a>
                                     </li>
                                 @endcan
+                                @can('view_reports')
+                                    <li>
+                                        <a href="" class="active">Reports</a>
+                                    </li>
+                                @endcan
                             </ul>
                         </div>
                     </div>

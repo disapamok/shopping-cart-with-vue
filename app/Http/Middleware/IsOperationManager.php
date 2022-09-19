@@ -16,7 +16,7 @@ class IsOperationManager
      */
     public function handle($request, Closure $next)
     {
-        if (auth()->check() && auth()->user()->role_id == Roles::OPERATION_MANAGER) {
+        if (auth()->check() && (auth()->user()->role_id == Roles::ADMIN || auth()->user()->role_id == Roles::OPERATION_MANAGER)) {
             return $next($request);
         } else {
             abort(403);

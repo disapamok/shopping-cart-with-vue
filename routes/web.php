@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Customer\CartController;
 use App\Http\Controllers\Customer\FrontController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Report\ReportController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,9 +33,13 @@ Route::group(['middleware' => 'auth', 'as' => 'cart.', 'prefix' => 'cart'], func
     Route::get('/order-history', [CartController::class, 'checkout'])->name('checkout');
 });
 
-Route::group(['middleware' => 'admin', 'prefix' => 'products', 'namespace' => 'Admin', 'as' => 'admin.'], function () {
+Route::group(['middleware' => ['auth', 'operation_manager'], 'prefix' => 'products', 'namespace' => 'Admin', 'as' => 'admin.'], function () {
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
     Route::resource('product', 'ProductController');
+});
+
+Route::group(['middleware' => ['auth', 'sales_manager'], 'prefix' => 'reports', 'namespace' => 'Report', 'as' => 'reports.'], function () {
+    Route::get('/dashboard', [ReportController::class, 'index'])->name('dashboard');
 });
 
 Auth::routes();
