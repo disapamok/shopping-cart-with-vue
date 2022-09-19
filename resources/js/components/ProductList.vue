@@ -19,7 +19,7 @@
                     <p>This product is available in the stock.</p>
                     <h3>Price: <span class="pull-right">Rs. {{product.price}}</span></h3>
                     <div class="product-actions">
-                        <button class="btn btn-sm btn-primary" v-on:click="addToCart(product)">Add To Cart</button>
+                        <button class="btn btn-sm btn-primary" v-on:click="addToCart(product,$event)">Add To Cart</button>
                     </div>
                 </div>
             </div>
@@ -38,7 +38,7 @@
             'categories','cart'
         ],
         methods:{
-            addToCart : function (product){
+            addToCart : function (product,event){
                 axios.post('/cart/add-to-cart',{
                     product_id : product.id
                 }).then((response) => {
@@ -46,6 +46,12 @@
                         this.cartItems.push(product);
                     }
                     this.showAlert(response.data.message);
+
+                    var btnTxt = event.target.innerHTML;
+                    event.target.innerHTML = 'Addded';
+                    setTimeout(function (){
+                        event.target.innerHTML = btnTxt;
+                    },1500);
                 }).catch(() => {
                     this.showAlert('There was an error while adding item to the cart.');
                 });

@@ -14,4 +14,13 @@ class Cart extends Model
     {
         return $this->hasMany(CartItems::class, 'cart_id', 'id');
     }
+
+    public function getAmountAttribute()
+    {
+        $amount = 0;
+        foreach ($this->items as $item)
+            $amount += ($item->qty * $item->product->price);
+
+        return number_format((float) $amount, 2, '.', '');
+    }
 }

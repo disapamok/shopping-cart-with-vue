@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
-    //
+    const ORDER_NUMBER_PREFIX = "ABC";
 }
