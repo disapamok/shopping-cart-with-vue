@@ -16,7 +16,9 @@ class CartController extends BaseAPIController
 {
     public function index()
     {
-        $cart = Cart::firstOrCreate(['user_id' => auth()->id()])->with('items', 'items.product', 'items.product.category')->first();
+        $cart = Cart::firstOrCreate(['user_id' => auth()->id()]);
+        $cart->items = CartItems::where('cart_id', $cart->id)->with('product', 'product.category')->get();
+
         return view('front.cart')->with([
             'cart' => $cart
         ]);
@@ -51,9 +53,9 @@ class CartController extends BaseAPIController
 
     public function checkout()
     {
-        $cart = Cart::firstOrCreate(['user_id' => auth()->id()])->with('items', 'items.product')->first();
-        return view('front.checkout')->with([
-            'cart' => $cart
+        $orders = Order::where('user_id', auth()->id())->with('items', 'items.product')->orderBy('created_at', 'DESC')->get();
+        return view('front.order_history')->with([
+            'orders' => $orders
         ]);
     }
 

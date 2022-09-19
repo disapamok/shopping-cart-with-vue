@@ -13,7 +13,7 @@
                         <h4>{{item.product.name}}</h4>
                         <p>{{item.product.category.name}}</p>
                     </div>
-                    <i>Quantity: {{item.qty}}</i>
+                    <h6><i>Quantity: {{item.qty}}</i></h6>
                     <h6>Rs. {{item.product.price.toFixed(2)}}</h6>
                     <h6>Rs. {{(item.product.price * item.qty).toFixed(2)}}</h6>
                     <button class="btn btn-sm btn-danger" v-on:click="remove(item)">Remove</button>
@@ -44,7 +44,10 @@
         <div class="row">
             <div class="col-lg-12">
                 <button v-if="cartItems.length > 0" v-on:click="checkout()"  class="btn btn-danger center checkout-now">Checkout Now</button>
-                <a href="/" class="btn btn-sm btn-primary center">Back to products</a>
+            </div>
+            <div class="col-lg-12 d-flex justify-content-center">
+                <a href="/" class="btn btn-sm btn-primary mr-1">Back to products</a>
+                <a href="/cart/order-history" class="btn btn-sm btn-success ml-1">View Order History</a>
             </div>
         </div>
     </div>
@@ -61,6 +64,7 @@ export default{
         'cart'
     ],
     mounted(){
+        console.log(this.cart.items);
         this.cartItems = this.cart.items;
     },
     methods: {

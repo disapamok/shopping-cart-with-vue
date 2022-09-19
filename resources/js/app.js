@@ -15,7 +15,7 @@ Vue.use(VueSweetalert2);
 // Customer view components
 Vue.component('product-list',require('./components/ProductList.vue').default);
 Vue.component('cart-view',require('./components/Cart.vue').default);
-Vue.component('checkout',require('./components/Checkout.vue').default);
+Vue.component('order-history',require('./components/OrderHistory.vue').default);
 
 // Admin View Components
 Vue.component('admin-products',require('./components/Admin/ManageProducts.vue').default);
