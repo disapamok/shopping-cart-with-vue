@@ -32,11 +32,9 @@
         data (){
             return {
                 cartItems : [],
+                categories : []
             }
         },
-        props : [
-            'categories','cart'
-        ],
         methods:{
             addToCart : function (product,event){
                 axios.post('/cart/add-to-cart',{
@@ -52,13 +50,17 @@
                     setTimeout(function (){
                         event.target.innerHTML = btnTxt;
                     },1500);
-                }).catch(() => {
-                    this.showAlert('There was an error while adding item to the cart.');
+                });
+            },
+            getData : function (){
+                axios.get('/get-product-data').then((response) => {
+                    this.cartItems = response.data.data.cart.items;
+                    this.categories = response.data.data.categories;
                 });
             }
         },
         mounted(){
-            this.cartItems = this.cart.items;
+            this.getData();
         }
     }
 </script>

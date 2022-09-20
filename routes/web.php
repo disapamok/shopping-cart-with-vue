@@ -13,6 +13,7 @@ Route::get('/', [HomeController::class, 'index'])->middleware('guest');
 
 Route::group(['middleware' => 'auth', 'as' => 'front.'], function () {
     Route::get('/', [FrontController::class, 'listProducts'])->name('list');
+    Route::get('/get-product-data', [FrontController::class, 'getProducts'])->name('get-data');
 });
 
 Route::group(['middleware' => 'auth', 'as' => 'cart.', 'prefix' => 'cart'], function () {

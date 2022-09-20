@@ -12,11 +12,16 @@ class FrontController extends BaseAPIController
 {
     public function listProducts()
     {
+        return view('front.product-list');
+    }
+
+    public function getProducts()
+    {
         $categories = Category::with('products')->get();
         $cart = Cart::firstOrCreate(['user_id' => auth()->id()]);
         $cart->items = CartItems::where('cart_id', $cart->id)->get();
 
-        return view('front.product-list')->with([
+        return $this->success([
             'categories' => $categories,
             'cart' => $cart
         ]);
