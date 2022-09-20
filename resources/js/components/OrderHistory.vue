@@ -2,9 +2,9 @@
     <div class="container order-history">
         <div class="col-lg-12" v-if="orders.length > 0">
             <div class="alert alert-success">
-                Hello, You can find out your order history below.
+                {{ $t('general.oh.greet') }}
             </div>
-            <h4>Your order history:</h4>
+            <h4>{{ $t('general.oh.title') }}:</h4>
         </div>
         <div class="col-lg-12" v-for="order in orders" :key="'ORDR'+order.id">
             <div class="card">
@@ -12,10 +12,10 @@
                     <div class="past-order">
                         <table class="order-meta">
                             <tr>
-                                <td>Order Number</td>
-                                <td>Order Date</td>
-                                <td>Gross Amount</td>
-                                <td>Payment Method</td>
+                                <td>{{ $t('general.oh.order_number') }}</td>
+                                <td>{{ $t('general.oh.order_date') }}</td>
+                                <td>{{ $t('general.gross_amount') }}</td>
+                                <td>{{ $t('general.oh.payment_method') }}</td>
                             </tr>
                             <tr>
                                 <td>
@@ -33,8 +33,8 @@
                         <table class="table table-hover">
                             <tr>
                                 <th>Product</th>
-                                <th class="text-right">Quantity</th>
-                                <th class="text-right">Price</th>
+                                <th class="text-right">{{ $t('general.cart.quantity') }}</th>
+                                <th class="text-right">{{ $t('general.price') }}</th>
                             </tr>
                             <tr v-for="item in order.items" :key="item.id">
                                 <td>{{item.product.name}}</td>
@@ -48,10 +48,10 @@
         </div>
         <div class="col-lg-12" v-if="orders.length == 0">
             <div class="alert alert-warning">
-                You haven't placed orders yet. Start shopping now!
+                {{ $t('general.oh.no_history') }}
             </div>
         </div>
-        <a href="/" class="btn btn-success btn-sm center">Browse Products</a>
+        <a href="/" class="btn btn-success btn-sm center">{{ $t('general.oh.browse_products') }}</a>
     </div>
 </template>
 

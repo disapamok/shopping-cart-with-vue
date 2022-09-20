@@ -38,7 +38,21 @@ export default {
                 "quantity": "Quantity",
                 "item_removed": "This item will be removed from the cart!",
                 "checkout_message": "This will perform the checkout. Are you sure you want to continue?",
-                "success_checkout": "Checkout process completed successfully."
+                "success_checkout": "Checkout process completed successfully.",
+                "removed": "The item has been removed from the cart.",
+                "added": "The product has been added to the cart.",
+                "qty_updated": "The product quantity has been updated.",
+                "order_processed": "Your order has been processed successfully."
+            },
+            "oh": {
+                "greet": "Hello, You can find out your order history below.",
+                "title": "Your order history",
+                "order_number": "Order Number",
+                "order_date": "Order Date",
+                "gross_amount": "Gross Amount",
+                "payment_method": "Payment Method",
+                "no_history": "You haven't placed orders yet. Start shopping now!",
+                "browse_products": "Browse Products"
             }
         },
         "pagination": {
@@ -204,7 +218,21 @@ export default {
                 "quantity": "ප්රමාණය",
                 "item_removed": "මෙම අයිතමය කරත්තයෙන් ඉවත් කරනු ලැබේ!",
                 "checkout_message": "මෙමගින් මිලදී ගැනීම සම්පූර්න වේ. ඔබට දිගටම කරගෙන යාමට අවශ්‍ය බව විශ්වාසද?",
-                "success_checkout": "මිලදී ගැනීම සම්පූර්ණයි!"
+                "success_checkout": "මිලදී ගැනීම සම්පූර්ණයි!",
+                "removed": "භාණ්ඩය කරත්තයෙන් ඉවත් කර ඇත.",
+                "added": "නිෂ්පාදිතය කරත්තයට එකතු කර ඇත.",
+                "qty_updated": "නිෂ්පාදන ප්‍රමාණය යාවත්කාලීන කර ඇත.",
+                "order_processed": "ඔබගේ ඇණවුම සාර්ථකයි."
+            },
+            "oh": {
+                "greet": "ආයුබෝවන්, ඔබට ඔබගේ ඇණවුම් ඉතිහාසය පහතින් දැනගත හැක.",
+                "title": "ඔබගේ ඇණවුම් ඉතිහාසය",
+                "order_number": "ඇණවුම් අංකය",
+                "order_date": "ඇණවුම් දිනය",
+                "gross_amount": "දළ වටිනාකම",
+                "payment_method": "ගෙවීම් ක්රමය",
+                "no_history": "ඔබ තවමත් ඇණවුම් කර නැත. දැන් සාප්පු සවාරි ආරම්භ කරන්න!",
+                "browse_products": "නිෂ්පාදන පිරික්සන්න"
             }
         },
         "pagination": {

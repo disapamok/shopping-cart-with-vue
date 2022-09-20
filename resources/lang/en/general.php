@@ -35,5 +35,16 @@ return [
         'added' => 'The product has been added to the cart.',
         'qty_updated' => 'The product quantity has been updated.',
         'order_processed' => 'Your order has been processed successfully.',
+    ],
+
+    "oh" => [
+        'greet' => 'Hello, You can find out your order history below.',
+        'title' => 'Your order history',
+        'order_number' => 'Order Number',
+        'order_date' => 'Order Date',
+        'gross_amount' => 'Gross Amount',
+        'payment_method' => 'Payment Method',
+        'no_history' => "You haven't placed orders yet. Start shopping now!",
+        'browse_products' => 'Browse Products',
     ]
 ];
