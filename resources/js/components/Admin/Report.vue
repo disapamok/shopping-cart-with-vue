@@ -30,6 +30,16 @@
                     />
             </div>
         </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <table class="table">
+                    <tr>
+                        <td>Orders for the period:</td>
+                        <td>{{totalOrders}} Orders</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
     </div>
   </template>
 
@@ -124,6 +134,11 @@
                 this.chartData.datasets[0].data = response.data.data.orders;
                 this.chartData.labels = response.data.data.days;
             });
+        }
+    },
+    computed : {
+        totalOrders : function (){
+            return eval(this.chartData.datasets[0].data.join('+'));
         }
     }
   }
