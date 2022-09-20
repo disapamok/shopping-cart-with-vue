@@ -1,19 +1,11 @@
 <?php
 
 return [
-
-    /*
-    |--------------------------------------------------------------------------
-    | Authentication Language Lines
-    |--------------------------------------------------------------------------
-    |
-    | The following language lines are used during authentication for various
-    | messages that we need to display to the user. You are free to modify
-    | these language lines according to your application's requirements.
-    |
-    */
-
-    'failed' => 'These credentials do not match our records.',
-    'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
-
+    'login' => 'ඇතුල් වන්න',
+    'email' => 'විද්යුත් තැපැල් ලිපිනය',
+    'password' => 'මුරපදය',
+    'remember_me' => 'මතක තබා ගන්න',
+    'forgot_password' => 'මුරපදය අමතක වුනාද?',
+    'failed' => 'මෙම අක්තපත්‍ර අපගේ වාර්තා සමඟ නොගැලපේ.',
+    'throttle' => 'පුරනය වීමේ උත්සාහයන් වැඩියි. කරුණාකර තත්පර :seconds කින් නැවත උත්සාහ කරන්න.',
 ];
