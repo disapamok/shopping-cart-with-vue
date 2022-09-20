@@ -3,43 +3,43 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Edit Product</h5>
+                    <h5 class="modal-title">{{ $t('general.product.edit_title') }}</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label>Product Name</label>
-                        <input type="text" placeholder="Product Name" class="form-control" v-model="editProduct.product_name"/>
+                        <label>{{ $t('general.product.name') }}</label>
+                        <input type="text" :placeholder="$t('general.product.name')" class="form-control" v-model="editProduct.product_name"/>
                         <p v-if="editProductErrors.product_name != null" class="text-danger">{{editProductErrors.product_name[0]}}</p>
                     </div>
                     <div class="form-group">
-                        <label>Category</label>
+                        <label>{{ $t('general.product.category') }}</label>
                         <select class="form-control" v-model="editProduct.product_category">
                             <option v-for="category in categories" :key="category.id" :value="category.id">{{category.name}}</option>
                         </select>
                         <p v-if="editProductErrors.product_category != null" class="text-danger">{{editProductErrors.product_category[0]}}</p>
                     </div>
                     <div class="form-group">
-                        <label>Product Price</label>
-                        <input type="text" placeholder="Product Price" class="form-control" v-model="editProduct.product_price"/>
+                        <label>{{ $t('general.product.price') }}</label>
+                        <input type="text" :placeholder="$t('general.product.price')" class="form-control" v-model="editProduct.product_price"/>
                         <p v-if="editProductErrors.product_price != null" class="text-danger">{{editProductErrors.product_price[0]}}</p>
                     </div>
                     <div class="form-group">
-                        <label>Image URL</label>
-                        <input type="text" placeholder="Product Price" class="form-control" v-model="editProduct.product_image"/>
+                        <label>{{ $t('general.product.image') }}</label>
+                        <input type="text" :placeholder="$t('general.product.image')" class="form-control" v-model="editProduct.product_image"/>
                         <p v-if="editProductErrors.product_image != null" class="text-danger">{{editProductErrors.product_image[0]}}</p>
                     </div>
                     <div class="form-group">
-                        <label>Product Description</label>
-                        <textarea type="text" placeholder="Product Description" class="form-control" rows="4" v-model="editProduct.product_description"></textarea>
+                        <label>{{ $t('general.product.description') }}</label>
+                        <textarea type="text" :placeholder="$t('general.product.description')" class="form-control" rows="4" v-model="editProduct.product_description"></textarea>
                         <p v-if="editProductErrors.product_description != null" class="text-danger">{{editProductErrors.product_description[0]}}</p>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" @click="updateProduct()">Update Product</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" @click="updateProduct()">{{ $t('general.product.do_update') }}</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ $t('general.product.close_action') }}</button>
                 </div>
             </div>
         </div>

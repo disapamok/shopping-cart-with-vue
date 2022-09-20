@@ -3,43 +3,43 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Add New Product</h5>
+                    <h5 class="modal-title">{{ $t('general.product.add_title') }}</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label>Product Name</label>
-                        <input type="text" placeholder="Product Name" class="form-control" v-model="addProduct.name"/>
+                        <label>{{ $t('general.product.name') }}</label>
+                        <input type="text" :placeholder="$t('general.product.name')" class="form-control" v-model="addProduct.name"/>
                         <p v-if="addProductErrors.name != null" class="text-danger">{{addProductErrors.name[0]}}</p>
                     </div>
                     <div class="form-group">
-                        <label>Category</label>
+                        <label>{{ $t('general.product.category') }}</label>
                         <select class="form-control" v-model="addProduct.category">
                             <option v-for="category in categories" :key="category.id" :value="category.id">{{category.name}}</option>
                         </select>
                         <p v-if="addProductErrors.category != null" class="text-danger">{{addProductErrors.category[0]}}</p>
                     </div>
                     <div class="form-group">
-                        <label>Product Price</label>
-                        <input type="text" placeholder="Product Price" class="form-control" v-model="addProduct.price"/>
+                        <label>{{ $t('general.product.price') }}</label>
+                        <input type="text" :placeholder="$t('general.product.price')" class="form-control" v-model="addProduct.price"/>
                         <p v-if="addProductErrors.price != null" class="text-danger">{{addProductErrors.price[0]}}</p>
                     </div>
                     <div class="form-group">
-                        <label>Image URL</label>
-                        <input type="text" placeholder="Product Price" class="form-control" v-model="addProduct.imageURL"/>
+                        <label>{{ $t('general.product.image') }}</label>
+                        <input type="text" :placeholder="$t('general.product.image')" class="form-control" v-model="addProduct.imageURL"/>
                         <p v-if="addProductErrors.imageURL != null" class="text-danger">{{addProductErrors.imageURL[0]}}</p>
                     </div>
                     <div class="form-group">
-                        <label>Product Description</label>
-                        <textarea type="text" placeholder="Product Description" class="form-control" rows="4" v-model="addProduct.description"></textarea>
+                        <label>{{ $t('general.product.description') }}</label>
+                        <textarea type="text" :placeholder="$t('general.product.description')" class="form-control" rows="4" v-model="addProduct.description"></textarea>
                         <p v-if="addProductErrors.description != null" class="text-danger">{{addProductErrors.description[0]}}</p>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" @click="createProduct()">Add Product</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" @click="createProduct()">{{ $t('general.product.add_action') }}</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ $t('general.product.close_action') }}</button>
                 </div>
             </div>
         </div>

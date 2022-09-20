@@ -54,29 +54,7 @@ class ProductController extends BaseAPIController
 
         return $this->success([
             'theProduct' => $productOb
-        ], 'Product has been added.');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        ], trans('general.product.added'));
     }
 
     /**
@@ -102,7 +80,7 @@ class ProductController extends BaseAPIController
 
         return $this->success([
             'theProduct' => $productOb
-        ], 'Product has been updated.');
+        ], trans('general.product.updated'));
     }
 
     /**
@@ -115,6 +93,6 @@ class ProductController extends BaseAPIController
     {
         Gate::authorize('touch_product');
         Product::find($id)->delete();
-        return $this->success([], 'The product has been deleted.');
+        return $this->success([], trans('general.product.deleted'));
     }
 }

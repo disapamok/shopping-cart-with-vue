@@ -60,5 +60,21 @@ return [
         'description' => 'Description',
         'image' => 'Image',
         'result_count' => 'Showing :count result(s).'
+    ],
+
+    'product' => [
+        'add_title' => 'Add New Product',
+        'edit_title' => 'Edit Product',
+        'name' => 'Product Name',
+        'category' => 'Category',
+        'price' => 'Product Price',
+        'image' => 'Image URL',
+        'description' => 'Product Description',
+        'add_action' => 'Add Product',
+        'close_action' => 'Close',
+        'added' => 'Product has been added.',
+        'updated' => 'Product has been updated.',
+        'deleted' => 'The product has been deleted.',
+        'do_update' => 'Update Product',
     ]
 ];

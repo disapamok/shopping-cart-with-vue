@@ -66,6 +66,21 @@ export default {
                 "description": "Description",
                 "image": "Image",
                 "result_count": "Showing {count} result(s)."
+            },
+            "product": {
+                "add_title": "Add New Product",
+                "edit_title": "Edit Product",
+                "name": "Product Name",
+                "category": "Category",
+                "price": "Product Price",
+                "image": "Image URL",
+                "description": "Product Description",
+                "add_action": "Add Product",
+                "close_action": "Close",
+                "added": "Product has been added.",
+                "updated": "Product has been updated.",
+                "deleted": "The product has been deleted.",
+                "do_update": "Update Product"
             }
         },
         "pagination": {
@@ -259,6 +274,21 @@ export default {
                 "description": "විස්තර",
                 "image": "ඡායාරූපය",
                 "result_count": "ප්‍රතිඵල {count} ක් පෙන්වයි."
+            },
+            "product": {
+                "add_title": "නව නිෂ්පාදනයක් එක් කරන්න",
+                "edit_title": "නිෂ්පාදනය සංස්කරණය කරන්න",
+                "name": "නිෂ්පාදන නාමය",
+                "category": "වර්ගය",
+                "price": "නිෂ්පාදන මිල",
+                "image": "රූප URL",
+                "description": "නිෂ්පාදනය විස්තරය",
+                "add_action": "නව නිෂ්පාදනය එක් කරන්න",
+                "close_action": "වසන්න",
+                "added": "නිෂ්පාදනය එකතු කර ඇත.",
+                "updated": "නිෂ්පාදනය යාවත්කාලීන කර ඇත.",
+                "deleted": "නිෂ්පාදනය මකා ඇත.",
+                "do_update": "නිෂ්පාදන යාවත්කාලීන කරන්න"
             }
         },
         "pagination": {
