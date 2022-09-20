@@ -19,6 +19,7 @@ Vue.component('order-history',require('./components/OrderHistory.vue').default);
 
 // Admin View Components
 Vue.component('admin-products',require('./components/Admin/ManageProducts.vue').default);
+Vue.component('sales-report',require('./components/Admin/Report.vue').default);
 
 Vue.mixin({
     methods : {

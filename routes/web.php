@@ -40,6 +40,7 @@ Route::group(['middleware' => ['auth', 'operation_manager'], 'prefix' => 'produc
 
 Route::group(['middleware' => ['auth', 'sales_manager'], 'prefix' => 'reports', 'namespace' => 'Report', 'as' => 'reports.'], function () {
     Route::get('/dashboard', [ReportController::class, 'index'])->name('dashboard');
+    Route::get('/get', [ReportController::class, 'get'])->name('fetch');
 });
 
 Auth::routes();
