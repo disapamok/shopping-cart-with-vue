@@ -36,13 +36,13 @@ Vue.mixin({
         },
         ask : function(title, message, callback){
             this.$swal({
-                title: (title == null ? "Are you sure?" : title),
+                title: (title == null ? Locale[language].general.are_you_sure : title),
                 text: message,
                 type: "warning",
                 showCancelButton: true,
                 confirmButtonColor: "#DD6B55",
-                confirmButtonText: "Yes, do it!",
-                cancelButtonText: "No, cancel!",
+                confirmButtonText: Locale[language].general.do_it,
+                cancelButtonText: Locale[language].general.cancel,
                 closeOnConfirm: false,
                 closeOnCancel: false
             }).then(callback);

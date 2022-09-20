@@ -27,7 +27,7 @@ class CartController extends BaseAPIController
     public function remove($cartItem, Request $request)
     {
         Cart::where('user_id', auth()->id())->first()->items()->find($cartItem)->delete();
-        return $this->success([], 'The item has been removed from the cart.');
+        return $this->success([], trans('general.cart.removed'));
     }
 
     public function addToCart(Request $request)
@@ -41,13 +41,13 @@ class CartController extends BaseAPIController
             $cart->items()->save(new CartItems(['product_id' => $request->product_id]));
             return $this->success([
                 'created' => true
-            ], 'The product has been added to the cart.');
+            ], trans('general.cart.added'));
         } else {
             $prodItem->qty = ($prodItem->qty + 1);
             $prodItem->update();
             return $this->success([
                 'created' => false
-            ], 'The product quantity has been updated.');
+            ], trans('general.cart.qty_updated'));
         }
     }
 
@@ -102,7 +102,7 @@ class CartController extends BaseAPIController
 
             return $this->success([
                 'order_number' => $order->order_number
-            ], 'Your order has been processed successfully.');
+            ], trans('general.cart.order_processed'));
         }
     }
 }

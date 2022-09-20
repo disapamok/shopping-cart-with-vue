@@ -21,6 +21,9 @@ export default {
             "add_to_cart": "Add To Cart",
             "rupees": "Rs",
             "price": "Price",
+            "are_you_sure": "Are you sure?",
+            "do_it": "Yes, Do it.",
+            "cancel": "No, Cancel.",
             "cart": {
                 "title": "Your shopping cart",
                 "remove": "Remove",
@@ -32,7 +35,10 @@ export default {
                 "checkout": "Checkout Now",
                 "total": "Total",
                 "discounts": "Discounts",
-                "quantity": "Quantity"
+                "quantity": "Quantity",
+                "item_removed": "This item will be removed from the cart!",
+                "checkout_message": "This will perform the checkout. Are you sure you want to continue?",
+                "success_checkout": "Checkout process completed successfully."
             }
         },
         "pagination": {
@@ -181,6 +187,9 @@ export default {
             "add_to_cart": "කරත්තයට එකතු කරන්න",
             "rupees": "රු",
             "price": "මිල",
+            "are_you_sure": "ඔබට විශ්වාසද?",
+            "do_it": "ඉදිරියට යන්න",
+            "cancel": "අවලංගු කරන්න",
             "cart": {
                 "title": "ඔබේ සාප්පු කරත්තය",
                 "remove": "ඉවත් කරන්න",
@@ -192,7 +201,10 @@ export default {
                 "checkout": "මිලදී ගැනීම සම්පූර්ණ කරන්න",
                 "total": "එකතුව",
                 "discounts": "වට්ටම්",
-                "quantity": "ප්රමාණය"
+                "quantity": "ප්රමාණය",
+                "item_removed": "මෙම අයිතමය කරත්තයෙන් ඉවත් කරනු ලැබේ!",
+                "checkout_message": "මෙමගින් මිලදී ගැනීම සම්පූර්න වේ. ඔබට දිගටම කරගෙන යාමට අවශ්‍ය බව විශ්වාසද?",
+                "success_checkout": "මිලදී ගැනීම සම්පූර්ණයි!"
             }
         },
         "pagination": {

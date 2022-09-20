@@ -54,6 +54,7 @@
 </template>
 
 <script>
+import VueI18n from 'vue-i18n';
 export default{
     data(){
         return{
@@ -69,7 +70,7 @@ export default{
     },
     methods: {
         remove : function(item){
-            this.ask(null,"This item will be removed from the cart!", function (action){
+            this.ask(null, this.$t('general.cart.item_removed'), function (action){
                 if(action.isConfirmed){
                     axios.delete('/cart/remove-item/'+item.id).then((response) => {
                         this.cartItems = this.cartItems.filter(function (ArItem){
@@ -82,14 +83,17 @@ export default{
         },
         checkout : function (){
             var cartID = this.cart.id;
-            this.ask(null,'This will perform the checkout. Are you sure you want to continue?',function (action){
+            this.ask(null, this.$t('general.cart.checkout_message'),function (action){
                 if(action.isConfirmed){
                     axios.put('cart/do-checkout',{
                         cart_id : cartID
                     }).then((response) => {
                         this.cartItems = [];
-                        this.showAlert('Checkout process completed successfully.');
-                        //location.href = '/cart/order-history';
+                        var successMessage = this.$t('general.cart.success_checkout');
+                        this.showAlert(successMessage);
+                        setTimeout(function (){
+                            location.href = '/cart/order-history';
+                        },2000);
                     });
                 }
             }.bind(this));

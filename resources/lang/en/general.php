@@ -12,6 +12,9 @@ return [
     'add_to_cart' => 'Add To Cart',
     'rupees' => 'Rs',
     'price' => 'Price',
+    'are_you_sure' => "Are you sure?",
+    'do_it' => 'Yes, Do it.',
+    'cancel' => 'No, Cancel.',
 
     'cart' => [
         'title' => 'Your shopping cart',
@@ -25,5 +28,12 @@ return [
         'total' => 'Total',
         'discounts' => 'Discounts',
         'quantity' => 'Quantity',
+        'item_removed' => "This item will be removed from the cart!",
+        'checkout_message' => 'This will perform the checkout. Are you sure you want to continue?',
+        'success_checkout' => 'Checkout process completed successfully.',
+        'removed' => 'The item has been removed from the cart.',
+        'added' => 'The product has been added to the cart.',
+        'qty_updated' => 'The product quantity has been updated.',
+        'order_processed' => 'Your order has been processed successfully.',
     ]
 ];
