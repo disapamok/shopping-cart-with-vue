@@ -80,7 +80,8 @@ export default {
                 "added": "Product has been added.",
                 "updated": "Product has been updated.",
                 "deleted": "The product has been deleted.",
-                "do_update": "Update Product"
+                "do_update": "Update Product",
+                "delete": "This product will be deleted!"
             },
             "sales": {
                 "greet": "Daily sales report.",
@@ -296,7 +297,8 @@ export default {
                 "added": "නිෂ්පාදනය එකතු කර ඇත.",
                 "updated": "නිෂ්පාදනය යාවත්කාලීන කර ඇත.",
                 "deleted": "නිෂ්පාදනය මකා ඇත.",
-                "do_update": "නිෂ්පාදන යාවත්කාලීන කරන්න"
+                "do_update": "නිෂ්පාදන යාවත්කාලීන කරන්න",
+                "delete": "මෙම අයිතමය මකා දැමෙනු ඇත!"
             },
             "sales": {
                 "greet": "දෛනික විකුණුම් වාර්තාව.",

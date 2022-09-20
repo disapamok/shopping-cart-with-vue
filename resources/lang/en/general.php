@@ -76,6 +76,7 @@ return [
         'updated' => 'Product has been updated.',
         'deleted' => 'The product has been deleted.',
         'do_update' => 'Update Product',
+        'delete' => "This product will be deleted!",
     ],
 
     'sales' => [

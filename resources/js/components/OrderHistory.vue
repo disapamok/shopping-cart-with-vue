@@ -65,7 +65,6 @@ export default ({
     },
     props : ['orders'],
     mounted(){
-        console.log(this.orders);
     }
 })
 </script>

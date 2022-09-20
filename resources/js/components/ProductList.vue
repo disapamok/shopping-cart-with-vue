@@ -59,7 +59,6 @@
         },
         mounted(){
             this.cartItems = this.cart.items;
-            console.log(this.cart);
         }
     }
 </script>

@@ -96,7 +96,8 @@ export default({
             this.filterReference++; // Reference to update the computed method.
         },
         deleteProduct : function (product){
-            this.ask(null,"This product will be deleted!", function (action){
+            var deleteTitle = this.$t('general.product.delete');
+            this.ask(null,deleteTitle, function (action){
                 if(action.isConfirmed){
                     axios.delete('/products/product/'+product.id).then((response) => {
                         this.showAlert(response.data.message);

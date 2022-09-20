@@ -65,7 +65,6 @@ export default{
         'cart'
     ],
     mounted(){
-        console.log(this.cart.items);
         this.cartItems = this.cart.items;
     },
     methods: {
