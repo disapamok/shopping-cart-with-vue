@@ -81,6 +81,14 @@ export default {
                 "updated": "Product has been updated.",
                 "deleted": "The product has been deleted.",
                 "do_update": "Update Product"
+            },
+            "sales": {
+                "greet": "Daily sales report.",
+                "tagline": "Details of the sale.",
+                "filter": "Filter",
+                "order_per_period": "Orders for the period",
+                "count_orders": "{count} Orders",
+                "orders": "ඇණවුම්"
             }
         },
         "pagination": {
@@ -289,6 +297,14 @@ export default {
                 "updated": "නිෂ්පාදනය යාවත්කාලීන කර ඇත.",
                 "deleted": "නිෂ්පාදනය මකා ඇත.",
                 "do_update": "නිෂ්පාදන යාවත්කාලීන කරන්න"
+            },
+            "sales": {
+                "greet": "දෛනික විකුණුම් වාර්තාව.",
+                "tagline": "විකිණීමේ විස්තර.",
+                "filter": "පෙන්වන්න",
+                "order_per_period": "කාල සීමාව සඳහා ඇණවුම්",
+                "count_orders": "ඇණවුම් {count}",
+                "orders": "ඇණවුම්"
             }
         },
         "pagination": {

@@ -2,8 +2,8 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 heading">
-                <h4>Daily sales report.</h4>
-                <p>Details of the sale.</p>
+                <h4>{{ $t('general.sales.greet') }}</h4>
+                <p>{{ $t('general.sales.tagline') }}</p>
             </div>
         </div>
         <div class="row">
@@ -34,8 +34,8 @@
             <div class="col-lg-6">
                 <table class="table">
                     <tr>
-                        <td>Orders for the period:</td>
-                        <td>{{totalOrders}} Orders</td>
+                        <td>{{ $t('general.sales.order_per_period') }}:</td>
+                        <td>{{ $t('general.sales.count_orders',{ count : totalOrders }) }}</td>
                     </tr>
                 </table>
             </div>
@@ -103,7 +103,7 @@
           labels: [],
           datasets: [
             {
-              label: 'Orders',
+              label: this.$t('general.sales.orders'),
               backgroundColor: '#f87979',
               data: []
             }

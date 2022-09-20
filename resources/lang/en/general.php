@@ -76,5 +76,14 @@ return [
         'updated' => 'Product has been updated.',
         'deleted' => 'The product has been deleted.',
         'do_update' => 'Update Product',
+    ],
+
+    'sales' => [
+        'greet' => 'Daily sales report.',
+        'tagline' => 'Details of the sale.',
+        'filter' => 'Filter',
+        'order_per_period' => 'Orders for the period',
+        'count_orders' => ':count Orders',
+        'orders' => 'ඇණවුම්'
     ]
 ];
