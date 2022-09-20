@@ -56,7 +56,7 @@
                             <li class="nav-item dropdown">
                                 <a id="languageSelector" class="nav-link dropdown-toggle" href="#" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    Select Language (<span id="selectedLanguage"></span>)
+                                    {{ trans('general.select_language') }} ({{ app()->getLocale() }})
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="languageSelector">
@@ -126,7 +126,7 @@
     <script>
         function changeLang(lang) {
             localStorage.setItem("lang", lang);
-            location.reload();
+            location.href = '/lang-' + lang;
         }
     </script>
 </body>

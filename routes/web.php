@@ -5,19 +5,9 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Customer\CartController;
 use App\Http\Controllers\Customer\FrontController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\Report\ReportController;
 use Illuminate\Support\Facades\Route;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Route::get('/', [HomeController::class, 'index'])->middleware('guest');
 
@@ -43,6 +33,6 @@ Route::group(['middleware' => ['auth', 'sales_manager'], 'prefix' => 'reports', 
     Route::get('/get', [ReportController::class, 'get'])->name('fetch');
 });
 
-Auth::routes();
+Route::get('lang-{lang}', [LanguageController::class, 'switchLang'])->name('lang.switch');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Auth::routes();
