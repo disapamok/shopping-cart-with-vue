@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Customer;
 
+use App\Http\Helpers\CartHelper;
 use App\Http\Controllers\BaseAPIController;
 use App\Http\Controllers\Controller;
 use App\Models\Order;
@@ -16,11 +17,9 @@ class CartController extends BaseAPIController
 {
     public function index()
     {
-        $cart = Cart::firstOrCreate(['user_id' => auth()->id()]);
-        $cart->items = CartItems::where('cart_id', $cart->id)->with('product', 'product.category')->get();
-
+        $cartHelper = new CartHelper();
         return view('front.cart')->with([
-            'cart' => $cart
+            'cart' => $cartHelper->getCart()
         ]);
     }
 
