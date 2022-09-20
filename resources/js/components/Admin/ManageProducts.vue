@@ -2,13 +2,13 @@
     <div class="container admin-products">
         <div class="row">
             <div class="col-lg-12 heading">
-                <h4>Products</h4>
-                <p>These are the products that live on the website.</p>
+                <h4>{{ $t('general.admin.products') }}</h4>
+                <p>{{ $t('general.admin.product_tagline') }}</p>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <button class="btn btn-primary" data-toggle="modal" data-target="#addProduct">Add Product</button>
+                <button class="btn btn-primary" data-toggle="modal" data-target="#addProduct">{{ $t('general.admin.add_product') }}</button>
             </div>
             <div class="ml-auto mr-3 category-selector">
                 <div class="form-group">
@@ -22,11 +22,11 @@
             <div class="col-lg-12">
                 <table class="table table-dashed">
                     <tr>
-                        <th>Name</th>
-                        <th>Price</th>
-                        <th>Description</th>
-                        <th>Image</th>
-                        <th class="text-right">Actions</th>
+                        <th>{{ $t('general.admin.name' )}}</th>
+                        <th>{{ $t('general.admin.price' )}}</th>
+                        <th>{{ $t('general.admin.description' )}}</th>
+                        <th>{{ $t('general.admin.image' )}}</th>
+                        <th class="text-right">{{ $t('general.admin.actions' )}}</th>
                     </tr>
                     <tr v-for="product in filteredProducts" :key="'P'+product.id">
                         <td>{{product.name}}</td>
@@ -39,7 +39,7 @@
                         </td>
                     </tr>
                 </table>
-                <p class="text-right">Showing {{filteredProducts.length}} result(s).</p>
+                <p class="text-right">{{ $t('general.admin.result_count',{ count: filteredProducts.length }) }}</p>
             </div>
         </div>
 

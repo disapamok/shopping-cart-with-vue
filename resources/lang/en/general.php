@@ -46,5 +46,19 @@ return [
         'payment_method' => 'Payment Method',
         'no_history' => "You haven't placed orders yet. Start shopping now!",
         'browse_products' => 'Browse Products',
+    ],
+
+    "admin" => [
+        'greet' => 'Please use this navigation to manage the system.',
+        'nav_prod_dashboard' => 'Product Dashboard',
+        'reports' => 'Reports',
+        'products' => 'Products',
+        'product_tagline' => 'These are the live products on the website.',
+        'add_product' => 'Add Product',
+        'name' => 'Name',
+        'price' => 'Price',
+        'description' => 'Description',
+        'image' => 'Image',
+        'result_count' => 'Showing :count result(s).'
     ]
 ];

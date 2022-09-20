@@ -26,7 +26,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    ABC Company - {{ auth()->user()->role->name }} Dashboard
+                    ABC {{ trans('general.company') }} - {{ auth()->user()->role->name }} Dashboard
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -98,18 +98,19 @@
                     <div class="col-lg-3 sidebar">
                         <div class="greet">
                             <h4>Hi, {{ auth()->user()->name }}</h4>
-                            <p>Please use this navigation to manage the system.</p>
+                            <p>{{ trans('general.admin.greet') }}</p>
                         </div>
                         <div class="menu">
                             <ul>
                                 @can('touch_product')
                                     <li>
-                                        <a href="" class="active">Product Dashboard</a>
+                                        <a href=""
+                                            class="active">{{ trans('general.admin.nav_prod_dashboard') }}</a>
                                     </li>
                                 @endcan
                                 @can('view_reports')
                                     <li>
-                                        <a href="" class="active">Reports</a>
+                                        <a href="" class="active">{{ trans('general.admin.reports') }}</a>
                                     </li>
                                 @endcan
                             </ul>

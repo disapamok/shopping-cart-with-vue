@@ -53,6 +53,19 @@ export default {
                 "payment_method": "Payment Method",
                 "no_history": "You haven't placed orders yet. Start shopping now!",
                 "browse_products": "Browse Products"
+            },
+            "admin": {
+                "greet": "Please use this navigation to manage the system.",
+                "nav_prod_dashboard": "Product Dashboard",
+                "reports": "Reports",
+                "products": "Products",
+                "product_tagline": "These are the live products on the website.",
+                "add_product": "Add Product",
+                "name": "Name",
+                "price": "Price",
+                "description": "Description",
+                "image": "Image",
+                "result_count": "Showing {count} result(s)."
             }
         },
         "pagination": {
@@ -233,6 +246,19 @@ export default {
                 "payment_method": "ගෙවීම් ක්රමය",
                 "no_history": "ඔබ තවමත් ඇණවුම් කර නැත. දැන් සාප්පු සවාරි ආරම්භ කරන්න!",
                 "browse_products": "නිෂ්පාදන පිරික්සන්න"
+            },
+            "admin": {
+                "greet": "පද්ධතිය කළමනාකරණය කිරීමට කරුණාකර මෙම සංචාලනය භාවිතා කරන්න.",
+                "nav_prod_dashboard": "නිෂ්පාදන උපකරණ පුවරුව",
+                "reports": "වාර්තා",
+                "products": "නිෂ්පාදන",
+                "product_tagline": "මේවා වෙබ් අඩවියේ දැනට පවතින සජීවී නිෂ්පාදන වේ.",
+                "add_product": "නිෂ්පාදන එකතු කරන්න",
+                "name": "නිෂ්පාදන නාමය",
+                "price": "මිල",
+                "description": "විස්තර",
+                "image": "ඡායාරූපය",
+                "result_count": "ප්‍රතිඵල {count} ක් පෙන්වයි."
             }
         },
         "pagination": {
