@@ -54,6 +54,21 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
+                                <a id="languageSelector" class="nav-link dropdown-toggle" href="#" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    Select Language (<span id="selectedLanguage"></span>)
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="languageSelector">
+                                    <a class="dropdown-item" href="#" onclick="changeLang('si')">
+                                        {{ __('Sinhala') }}
+                                    </a>
+                                    <a class="dropdown-item" href="#" onclick="changeLang('en')">
+                                        {{ __('English') }}
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
@@ -107,6 +122,13 @@
             </div>
         </main>
     </div>
+
+    <script>
+        function changeLang(lang) {
+            localStorage.setItem("lang", lang);
+            location.reload();
+        }
+    </script>
 </body>
 
 </html>

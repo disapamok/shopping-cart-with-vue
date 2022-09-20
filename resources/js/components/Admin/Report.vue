@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 heading">
-                <h4>Daily sales report.</h4>
+                <h4>Daily sales report. {{ $t('auth.failed') }}</h4>
                 <p>Details of the sale.</p>
             </div>
         </div>
@@ -112,7 +112,8 @@
         chartOptions: {
           responsive: true,
           maintainAspectRatio: false
-        }
+        },
+        locale: 'en'
       }
     },
     mounted(){
