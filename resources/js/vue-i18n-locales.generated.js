@@ -1,11 +1,26 @@
 export default {
     "en": {
         "auth": {
+            "login": "Login",
+            "email": "E-Mail Address",
+            "password": "Password",
+            "remember_me": "Remember Me",
+            "forgot_password": "Forgot Your Password?",
             "failed": "These credentials do not match our records.",
             "throttle": "Too many login attempts. Please try again in {seconds} seconds."
         },
         "general": {
-            "select_language": "Select Language"
+            "select_language": "Select Language",
+            "company": "Company",
+            "vault_text": "Default usernames and passwords",
+            "products_title": "Find your product and do \"Add to cart\" to purchase a lot once!",
+            "view_cart": "View Cart",
+            "category_name": "Category Name",
+            "name": "Name",
+            "stock_available": "This product is available in stock.",
+            "add_to_cart": "Add To Cart",
+            "rupees": "Rs",
+            "price": "Price"
         },
         "pagination": {
             "previous": "&laquo; Previous",
@@ -133,27 +148,42 @@ export default {
     },
     "si": {
         "auth": {
-            "failed": "These credentials do not match our records.",
-            "throttle": "Too many login attempts. Please try again in {seconds} seconds."
+            "login": "ඇතුල් වන්න",
+            "email": "විද්යුත් තැපැල් ලිපිනය",
+            "password": "මුරපදය",
+            "remember_me": "මතක තබා ගන්න",
+            "forgot_password": "මුරපදය අමතක වුනාද?",
+            "failed": "මෙම අක්තපත්‍ර අපගේ වාර්තා සමඟ නොගැලපේ.",
+            "throttle": "පුරනය වීමේ උත්සාහයන් වැඩියි. කරුණාකර තත්පර {seconds} කින් නැවත උත්සාහ කරන්න."
         },
         "general": {
-            "select_language": "භාෂාව තෝරන්න"
+            "select_language": "භාෂාව තෝරන්න",
+            "company": "සමාගම",
+            "vault_text": "පෙරනිමි පරිශීලක නාම සහ මුරපද",
+            "products_title": "එක් වරකදී භාන්ඩ ගොඩක් මිල දී ගැනීමට භාන්ඩය කරත්තයට එකතු කරගන්න.",
+            "view_cart": "කරත්තය බලන්න",
+            "category_name": "කාණ්ඩයේ නම",
+            "name": "නම",
+            "stock_available": "මෙම නිෂ්පාදනය තොගයේ ඇත.",
+            "add_to_cart": "කරත්තයට එකතු කරන්න",
+            "rupees": "රු",
+            "price": "මිල"
         },
         "pagination": {
-            "previous": "&laquo; Previous",
-            "next": "Next &raquo;"
+            "previous": "&laquo; පෙර පිටුව",
+            "next": "ඊළඟ පිටුව &raquo;"
         },
         "passwords": {
-            "reset": "Your password has been reset!",
-            "sent": "We have emailed your password reset link!",
-            "throttled": "Please wait before retrying.",
-            "token": "This password reset token is invalid.",
-            "user": "We can't find a user with that email address."
+            "reset": "ඔබගේ මුරපදය යළි සකසා ඇත!",
+            "sent": "අපි ඔබගේ මුරපද යළි පිහිටුවීමේ සබැඳිය ඊමේල් කර ඇත!",
+            "throttled": "කරුණාකර නැවත උත්සාහ කිරීමට පෙර රැඳී සිටින්න.",
+            "token": "මෙම මුරපද යළි පිහිටුවීමේ ටෝකනය වලංගු නොවේ.",
+            "user": "අපට එම විද්‍යුත් තැපැල් ලිපිනය සහිත පරිශීලකයෙකු සොයාගත නොහැක."
         },
         "validation": {
-            "accepted": "The {attribute} must be accepted.",
-            "active_url": "The {attribute} is not a valid URL.",
-            "after": "The {attribute} must be a date after {date}.",
+            "accepted": "{attribute} පිළිගත යුතුය.",
+            "active_url": "{attribute} වලංගු URL එකක් නොවේ.",
+            "after": "{attribute}, {date} පසු දිනයක් විය යුතුය.",
             "after_or_equal": "The {attribute} must be a date after or equal to {date}.",
             "alpha": "The {attribute} may only contain letters.",
             "alpha_dash": "The {attribute} may only contain letters, numbers, dashes and underscores.",
@@ -234,7 +264,7 @@ export default {
             "password": "The password is incorrect.",
             "present": "The {attribute} field must be present.",
             "regex": "The {attribute} format is invalid.",
-            "required": "The {attribute} field is required.",
+            "required": "{attribute} ක්ෂේත්රය අවශ්ය වේ.",
             "required_if": "The {attribute} field is required when {other} is {value}.",
             "required_unless": "The {attribute} field is required unless {other} is in {values}.",
             "required_with": "The {attribute} field is required when {values} is present.",
@@ -253,7 +283,7 @@ export default {
             "timezone": "The {attribute} must be a valid zone.",
             "unique": "The {attribute} has already been taken.",
             "uploaded": "The {attribute} failed to upload.",
-            "url": "The {attribute} format is invalid.",
+            "url": "The {attribute} ආකෘතිය වලංගු නොවේ.",
             "uuid": "The {attribute} must be a valid UUID.",
             "custom": {
                 "attribute-name": {

@@ -2,24 +2,24 @@
     <div class="container product-list">
         <div class="row">
             <div class="col-lg-9">
-                <h3 class="text-left">Find your product and do "Add to cart" to purchase a lot once!</h3>
+                <h3 class="text-left">{{$t('general.products_title')}}</h3>
             </div>
             <div class="col-lg-3">
-                <a href="/cart" class="btn btn-danger float-right">View Cart - ({{cartItems.length}} Items)</a>
+                <a href="/cart" class="btn btn-danger float-right">{{$t('general.view_cart')}} - ({{cartItems.length}} Items)</a>
             </div>
         </div>
         <div class="row" v-for="category in categories" :key="category.id">
             <div class="col-lg-12">
-                <p class="text-left">Category Name: {{category.name}}</p>
+                <p class="text-left">{{$t('general.category_name')}}: {{category.name}}</p>
             </div>
             <div class="col-lg-3" v-for="product in category.products" :key="'P'+product.id">
                 <div class="product-thumbnail">
                     <img :src="product.image" class="img-responsive" />
-                    <h4>Name: {{product.name}}</h4>
-                    <p>This product is available in the stock.</p>
-                    <h3>Price: <span class="pull-right">Rs. {{product.price}}</span></h3>
+                    <h4>{{$t('general.name')}}: {{product.name}}</h4>
+                    <p>{{$t('general.stock_available')}}</p>
+                    <h3>{{ $t('general.price') }}: <span class="pull-right">{{$t('general.rupees')}}. {{product.price}}</span></h3>
                     <div class="product-actions">
-                        <button class="btn btn-sm btn-primary" v-on:click="addToCart(product,$event)">Add To Cart</button>
+                        <button class="btn btn-sm btn-primary" v-on:click="addToCart(product,$event)">{{$t('general.add_to_cart')}}</button>
                     </div>
                 </div>
             </div>
