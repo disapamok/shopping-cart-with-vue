@@ -20,7 +20,20 @@ export default {
             "stock_available": "This product is available in stock.",
             "add_to_cart": "Add To Cart",
             "rupees": "Rs",
-            "price": "Price"
+            "price": "Price",
+            "cart": {
+                "title": "Your shopping cart",
+                "remove": "Remove",
+                "empty": "Your cart is empty. Add items from the product page.",
+                "lkr": "LKR",
+                "total_payble": "Total Payable",
+                "back_to_products": "Back to products",
+                "view_order_history": "View Order History",
+                "checkout": "Checkout Now",
+                "total": "Total",
+                "discounts": "Discounts",
+                "quantity": "Quantity"
+            }
         },
         "pagination": {
             "previous": "&laquo; Previous",
@@ -167,7 +180,20 @@ export default {
             "stock_available": "මෙම නිෂ්පාදනය තොගයේ ඇත.",
             "add_to_cart": "කරත්තයට එකතු කරන්න",
             "rupees": "රු",
-            "price": "මිල"
+            "price": "මිල",
+            "cart": {
+                "title": "ඔබේ සාප්පු කරත්තය",
+                "remove": "ඉවත් කරන්න",
+                "empty": "ඔබේ කරත්තය හිස්ය. නිෂ්පාදන පිටුවෙන් අයිතම එකතු කරන්න.",
+                "lkr": "රුපියල්",
+                "total_payble": "ගෙවිය යුතු මුළු මුදල",
+                "back_to_products": "නිෂ්පාදන වෙත ආපසු",
+                "view_order_history": "ඇණවුම් ඉතිහාසය බලන්න",
+                "checkout": "මිලදී ගැනීම සම්පූර්ණ කරන්න",
+                "total": "එකතුව",
+                "discounts": "වට්ටම්",
+                "quantity": "ප්රමාණය"
+            }
         },
         "pagination": {
             "previous": "&laquo; පෙර පිටුව",

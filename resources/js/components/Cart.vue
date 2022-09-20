@@ -2,7 +2,7 @@
     <div class="container the-cart">
         <div class="row">
             <div class="col-lg-12">
-                <h3 class="text-center">Your shopping cart</h3>
+                <h3 class="text-center">{{ $t('general.cart.title') }}</h3>
             </div>
         </div>
         <div class="row">
@@ -13,29 +13,29 @@
                         <h4>{{item.product.name}}</h4>
                         <p>{{item.product.category.name}}</p>
                     </div>
-                    <h6><i>Quantity: {{item.qty}}</i></h6>
+                    <h6><i>{{ $t('general.cart.quantity') }}: {{item.qty}}</i></h6>
                     <h6>Rs. {{item.product.price.toFixed(2)}}</h6>
                     <h6>Rs. {{(item.product.price * item.qty).toFixed(2)}}</h6>
-                    <button class="btn btn-sm btn-danger" v-on:click="remove(item)">Remove</button>
+                    <button class="btn btn-sm btn-danger" v-on:click="remove(item)">{{ $t('general.cart.remove') }}</button>
                 </div>
             </div>
             <div class="col-lg-12" v-if="cartItems.length == 0">
-                <div class="alert alert-warning text-center">Your cart is empty. Add items from the product page.</div>
+                <div class="alert alert-warning text-center">{{ $t('general.cart.empty') }}</div>
             </div>
         </div>
         <div class="row justify-content-end">
             <div class="col-lg-3 float-right">
                 <table class="cart-total">
                     <tr>
-                        <span>Total:</span>
+                        <span>{{ $t('general.cart.total') }}:</span>
                         <span class="float-right">{{cartTotal}}</span>
                     </tr>
                     <tr>
-                        <span>Discounts:</span>
-                        <span class="float-right">0 LKR</span>
+                        <span>{{ $t('general.cart.discounts') }}:</span>
+                        <span class="float-right">{{ $t('general.cart.lkr') }}: 0</span>
                     </tr>
                     <tr>
-                        <span>Total Payable:</span>
+                        <span>{{ $t('general.cart.total_payble') }}:</span>
                         <span class="float-right">{{cartTotal}}</span>
                     </tr>
                 </table>
@@ -43,11 +43,11 @@
         </div>
         <div class="row">
             <div class="col-lg-12">
-                <button v-if="cartItems.length > 0" v-on:click="checkout()"  class="btn btn-danger center checkout-now">Checkout Now</button>
+                <button v-if="cartItems.length > 0" v-on:click="checkout()"  class="btn btn-danger center checkout-now">{{ $t('general.cart.checkout') }}</button>
             </div>
             <div class="col-lg-12 d-flex justify-content-center">
-                <a href="/" class="btn btn-sm btn-primary mr-1">Back to products</a>
-                <a href="/cart/order-history" class="btn btn-sm btn-success ml-1">View Order History</a>
+                <a href="/" class="btn btn-sm btn-primary mr-1">{{ $t('general.cart.back_to_products') }}</a>
+                <a href="/cart/order-history" class="btn btn-sm btn-success ml-1">{{ $t('general.cart.view_order_history') }}</a>
             </div>
         </div>
     </div>

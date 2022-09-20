@@ -11,5 +11,19 @@ return [
     'stock_available' => 'This product is available in stock.',
     'add_to_cart' => 'Add To Cart',
     'rupees' => 'Rs',
-    'price' => 'Price'
+    'price' => 'Price',
+
+    'cart' => [
+        'title' => 'Your shopping cart',
+        'remove' => 'Remove',
+        'empty' => 'Your cart is empty. Add items from the product page.',
+        'lkr' => 'LKR',
+        'total_payble' => 'Total Payable',
+        'back_to_products' => 'Back to products',
+        'view_order_history' => 'View Order History',
+        'checkout' => 'Checkout Now',
+        'total' => 'Total',
+        'discounts' => 'Discounts',
+        'quantity' => 'Quantity',
+    ]
 ];
